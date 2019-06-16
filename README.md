@@ -8,3 +8,5 @@ to begin with DRD Replicator, add the following line to the master engine's prop
  to download compiled demo :
 
 https://www.mediafire.com/file/75615caewi3s60q/DRD-Replicator-trial-1.2.7z/file
+
+For contribution contact me : corso.technology *|at|* gmail.com
