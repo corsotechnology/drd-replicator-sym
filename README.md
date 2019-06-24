@@ -5,8 +5,8 @@ DRD Replicator is a dashboard for configuration and administration interfacing w
 to begin with DRD Replicator, add the following line to the master engine's properties file:
 
 **rest.api.enable=true**
- to download compiled demo :
+ to download compiled CE version :
 
-https://www.mediafire.com/file/75615caewi3s60q/DRD-Replicator-trial-1.2.7z/file
+v1.0ce: https://github.com/corsotechnology/drd-replicator-sym/releases/download/v1.0ce/DRD-Replicartor-CE-v1.0.7z
 
-For contribution contact me : corso.technology *|at|* gmail.com
+For contribution, or professional support contact me : corso.technology *|at|* gmail.com
