@@ -25,19 +25,10 @@ void Dialog_open_registeration_node::on_pushButton_clicked()
                 +port
                 +"/api/engine/registernode");
     QByteArray data;
-    data.append("{\"externalId\":\""
+    data.append("externalId="
                 +ui->lineEdit_externalId->text().replace("'","''")
-                +"\", \"nodeGroupId\":\""
-                +ui->lineEdit_nodeGroupId->text().replace("'","''")
-                +"\", \"databaseType\":\""
-                +ui->lineEdit_databaseType->text().replace("'","''")
-                +"\", \"databaseVersion\":\""
-                +ui->lineEdit_databaseVersion->text().replace("'","''")
-                +"\", \"hostName\":\""
-                +ui->lineEdit_hostName->text().replace("'","''")
-                +"\"}"
                 );
-    manager->post(QNetworkRequest(QUrl(url.replace("+","%2B"))),data);
+    manager->post(QNetworkRequest(QUrl(url)),data);
 }
 
 void Dialog_open_registeration_node::initialisation()
@@ -48,6 +39,9 @@ void Dialog_open_registeration_node::initialisation()
 void Dialog_open_registeration_node::managerFinished(QNetworkReply *reply)
 {
     QString response(reply->readAll());
+    //--Debug
+    QMessageBox::information(this,"Error",response);
+    //---
     if(response.contains("failed") | response.contains("error")){
         QMessageBox::information(this,"Error",response);
         return;

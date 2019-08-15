@@ -15,6 +15,7 @@
 #include "dialog_node_child_info.h"
 #include "dialog_table_reload_request.h"
 #include "dialog_open_registeration_node.h"
+#include "dialog_about.h"
 #include <QMainWindow>
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
@@ -85,6 +86,7 @@ public slots:
     void Display_administration();
     void Display_projects();
     void Display_node_child_info();
+    void Display_about();
     void Get_node_ops();
     void Register_node();
     void Start_sym_service();

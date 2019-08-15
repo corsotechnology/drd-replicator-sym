@@ -40,7 +40,8 @@ SOURCES += \
     dialog_new_project.cpp \
     dialog_node_child_info.cpp \
     dialog_table_reload_request.cpp \
-    dialog_open_registeration_node.cpp
+    dialog_open_registeration_node.cpp \
+    dialog_about.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -58,7 +59,8 @@ HEADERS += \
     table_color.h \
     dialog_node_child_info.h \
     dialog_table_reload_request.h \
-    dialog_open_registeration_node.h
+    dialog_open_registeration_node.h \
+    dialog_about.h
 
 FORMS += \
         mainwindow.ui \
@@ -75,7 +77,8 @@ FORMS += \
     dialog_new_project.ui \
     dialog_node_child_info.ui \
     dialog_table_reload_request.ui \
-    dialog_open_registeration_node.ui
+    dialog_open_registeration_node.ui \
+    dialog_about.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

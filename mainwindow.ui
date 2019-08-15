@@ -1431,8 +1431,15 @@ background-color: rgb(163, 163, 163);
     <addaction name="actionConfiguration"/>
     <addaction name="actionAdminnistration"/>
    </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuDashboard"/>
+   <addaction name="menuHelp"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -1466,6 +1473,11 @@ background-color: rgb(163, 163, 163);
   <action name="actionFull_screen">
    <property name="text">
     <string>Full screen</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
    </property>
   </action>
  </widget>

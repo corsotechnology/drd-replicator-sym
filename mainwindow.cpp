@@ -77,6 +77,7 @@ MainWindow::MainWindow(QWidget *parent) :
     //--------------
     connect(ui->actionConfiguration,SIGNAL(triggered()),this,SLOT(Display_configuration()));
     connect(ui->actionAdminnistration,SIGNAL(triggered()),this,SLOT(Display_administration()));
+    connect(ui->actionAbout,SIGNAL(triggered()),this,SLOT(Display_about()));
     //--Config actions
     QAction *add_ch = new QAction(this);
     add_ch->setText("Add channel");
@@ -440,6 +441,12 @@ void MainWindow::Display_node_child_info()
     ui->tableView_node_children->setColumnWidth(2,(ui->tableView_node_children->width()/5));
     ui->tableView_node_children->setColumnWidth(3,(ui->tableView_node_children->width()/5));
     ui->tableView_node_children->setColumnWidth(4,(ui->tableView_node_children->width()/5));
+}
+
+void MainWindow::Display_about()
+{
+    Dialog_about dg;
+    dg.exec();
 }
 
 void MainWindow::Get_node_ops()
