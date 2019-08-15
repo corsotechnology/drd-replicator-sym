@@ -624,7 +624,7 @@ void MainWindow::channel_managerFinished(QNetworkReply *reply)
 {
     QJsonParseError jsonError;
     QString response(reply->readAll());
-    if(response.contains("executeQuery")){
+    if(response.contains("executeQuery") | response.contains("No results")){
         return;
     }
     response.replace("\n"," ");
@@ -671,7 +671,7 @@ void MainWindow::node_managerFinished(QNetworkReply *reply)
 {
     QJsonParseError jsonError;
     QString response(reply->readAll());
-    if(response.contains("executeQuery")){
+    if(response.contains("executeQuery") | response.contains("No results")){
         return;
     }
     response.replace("\n"," ");
@@ -720,7 +720,7 @@ void MainWindow::node_group_managerFinished(QNetworkReply *reply)
 {
     QJsonParseError jsonError;
     QString response(reply->readAll());
-    if(response.contains("executeQuery")){
+    if(response.contains("executeQuery") | response.contains("No results")){
         return;
     }
     response.replace("\n"," ");
@@ -767,7 +767,7 @@ void MainWindow::node_group_link_managerFinished(QNetworkReply *reply)
 {
     QJsonParseError jsonError;
     QString response(reply->readAll());
-    if(response.contains("executeQuery")){
+    if(response.contains("executeQuery") | response.contains("No results")){
         return;
     }
     response.replace("\n"," ");
@@ -810,7 +810,7 @@ void MainWindow::router_managerFinished(QNetworkReply *reply)
 {
     QJsonParseError jsonError;
     QString response(reply->readAll());
-    if(response.contains("executeQuery")){
+    if(response.contains("executeQuery") | response.contains("No results")){
         return;
     }
     response.replace("\n"," ");
@@ -857,7 +857,7 @@ void MainWindow::trigger_managerFinished(QNetworkReply *reply)
 {
     QJsonParseError jsonError;
     QString response(reply->readAll());
-    if(response.contains("executeQuery")){
+    if(response.contains("executeQuery") | response.contains("No results")){
         return;
     }
     response.replace("\n"," ");
@@ -904,7 +904,7 @@ void MainWindow::trigger_router_managerFinished(QNetworkReply *reply)
 {
     QJsonParseError jsonError;
     QString response(reply->readAll());
-    if(response.contains("executeQuery")){
+    if(response.contains("executeQuery") | response.contains("No results")){
         return;
     }
     response.replace("\n"," ");
@@ -947,7 +947,7 @@ void MainWindow::notification_managerFinished(QNetworkReply *reply)
 {
     QJsonParseError jsonError;
     QString response(reply->readAll());
-    if(response.contains("executeQuery")){
+    if(response.contains("executeQuery") | response.contains("No results")){
         return;
     }
     response.replace("\n"," ");
@@ -990,7 +990,7 @@ void MainWindow::monitor_managerFinished(QNetworkReply *reply)
 {
     QJsonParseError jsonError;
     QString response(reply->readAll());
-    if(response.contains("executeQuery")){
+    if(response.contains("executeQuery") | response.contains("No results")){
         return;
     }
     response.replace("\n"," ");
@@ -1033,7 +1033,7 @@ void MainWindow::parameter_managerFinished(QNetworkReply *reply)
 {
     QJsonParseError jsonError;
     QString response(reply->readAll());
-    if(response.contains("executeQuery")){
+    if(response.contains("executeQuery") | response.contains("No results")){
         return;
     }
     response.replace("\n"," ");
@@ -1076,7 +1076,7 @@ void MainWindow::req_managerFinished(QNetworkReply *reply)
 {
     QString response(reply->readAll());
     QSqlQuery qr(db);
-    if( !response.contains("executeQuery") && (response.contains("failed") | response.contains("error"))){
+    if( !response.contains("executeQuery") && !response.contains("No results") && (response.contains("failed") | response.contains("error"))){
         QMessageBox::information(this,"Error",response);
         return;
     }
@@ -1289,7 +1289,7 @@ void MainWindow::ch_status_managerFinished(QNetworkReply *reply)
 {
     QJsonParseError jsonError;
     QString response(reply->readAll());
-    if(response.contains("executeQuery")){
+    if(response.contains("executeQuery") | response.contains("No results")){
         return;
     }
     response.replace("\n"," ");
@@ -1340,7 +1340,7 @@ void MainWindow::out_bt_managerFinished(QNetworkReply *reply)
 {
     QJsonParseError jsonError;
     QString response(reply->readAll());
-    if(response.contains("executeQuery")){
+    if(response.contains("executeQuery") | response.contains("No results")){
         return;
     }
     response.replace("\n"," ");
@@ -1383,7 +1383,7 @@ void MainWindow::in_bt_managerFinished(QNetworkReply *reply)
 {
     QJsonParseError jsonError;
     QString response(reply->readAll());
-    if(response.contains("executeQuery")){
+    if(response.contains("executeQuery") | response.contains("No results")){
         return;
     }
     response.replace("\n"," ");
@@ -1426,7 +1426,7 @@ void MainWindow::child_out_bt_managerFinished(QNetworkReply *reply)
 {
     QJsonParseError jsonError;
     QString response(reply->readAll());
-    if(response.contains("executeQuery")){
+    if(response.contains("executeQuery") | response.contains("No results")){
         return;
     }
     response.replace("\n"," ");
@@ -1469,7 +1469,7 @@ void MainWindow::child_in_bt_managerFinished(QNetworkReply *reply)
 {
     QJsonParseError jsonError;
     QString response(reply->readAll());
-    if(response.contains("executeQuery")){
+    if(response.contains("executeQuery") | response.contains("No results")){
         return;
     }
     response.replace("\n"," ");
@@ -1512,7 +1512,7 @@ void MainWindow::query_db_managerFinished(QNetworkReply *reply)
 {
     QJsonParseError jsonError;
     QString response(reply->readAll());
-    if(response.contains("executeQuery")){
+    if(response.contains("executeQuery") | response.contains("No results")){
         return;
     }
     response.replace("\n"," ");
@@ -1555,7 +1555,7 @@ void MainWindow::out_metrics_managerFinished(QNetworkReply *reply)
 {
     QJsonParseError jsonError;
     QString response(reply->readAll());
-    if(response.contains("executeQuery")){
+    if(response.contains("executeQuery") | response.contains("No results")){
         return;
     }
     response.replace("\n"," ");
@@ -1614,7 +1614,7 @@ void MainWindow::completer_managerFinished(QNetworkReply *reply)
 {
         QJsonParseError jsonError;
         QString response(reply->readAll());
-        if(response.contains("executeQuery")){
+        if(response.contains("executeQuery") | response.contains("No results")){
             return;
         }
         response.replace("\t","");

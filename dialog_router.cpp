@@ -41,7 +41,7 @@ void Dialog_router::initialisation()
 void Dialog_router::managerFinished(QNetworkReply *reply)
 {
     QString response(reply->readAll());
-    if(response.contains("executeQuery"))close();
+    if(response.contains("executeQuery") | response.contains("No results"))close();
     else if(response.contains("failed") | response.contains("error"))
         QMessageBox::information(this,"Error",response);
     else close();

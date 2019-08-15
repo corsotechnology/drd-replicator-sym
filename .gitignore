@@ -1,0 +1,10 @@
+
+*.user
+
+\.qmake\.stash
+
+Makefile
+
+release/REPLICATOR
+
+*.db

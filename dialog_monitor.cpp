@@ -38,7 +38,7 @@ void Dialog_monitor::initialisation()
 void Dialog_monitor::managerFinished(QNetworkReply *reply)
 {
     QString response(reply->readAll());
-    if(response.contains("executeQuery"))close();
+    if(response.contains("executeQuery") | response.contains("No results"))close();
     else if(response.contains("failed") | response.contains("error"))
         QMessageBox::information(this,"Error",response);
     else close();
@@ -104,7 +104,7 @@ void Dialog_monitor::on_pushButton_clicked()
                 +QVariant(ui->spinBox_severity_level->value()).toString().replace("'","''")
                 +", enabled="
                 +QVariant(ui->spinBox_enabled->value()).toString().replace("'","''")
-                +"' where monitor_id = '"+monitor_id.replace("'","''")+"';";
+                +" where monitor_id = '"+monitor_id.replace("'","''")+"';";
         manager->get(QNetworkRequest(QUrl(url)));
     }
 }
